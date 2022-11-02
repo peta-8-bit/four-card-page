@@ -1,0 +1,63 @@
+@mixin card-style-mobile($color){
+ 
+    height: 13em;
+    width: 300px;
+    background-color: white;
+    position: relative;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    border-top: $color 4px solid;
+    h3{
+        position: absolute;
+        margin-top: 20px;
+        left:25px;
+        font-family: poppins-medium;
+        color:hsl(240, 11%, 34%);
+    }
+
+    p{
+        position: absolute;
+        margin-top:45px;
+        text-align: left;
+        left: 25px;
+        font-family: poppins-light;
+        color: hsl(255, 3%, 73%);
+    }
+
+    svg{
+        position: absolute;
+        bottom: 20px;
+        right: 25px;
+    }
+
+}
+
+
+@mixin card-style-desktop($areaname){
+
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    grid-area: $areaname;
+    
+
+    h3{
+        position: absolute;
+        margin-top: 20px;
+        left:25px;
+    }
+
+    p{
+        position: absolute;
+        margin-top:45px;
+        text-align: left;
+        left: 25px;
+    }
+
+    svg{
+        position: absolute;
+        bottom: 20px;
+        right: 25px;
+    }
+
+}

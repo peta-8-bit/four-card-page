@@ -1,0 +1,139 @@
+@import './block';
+$teambuilder-color:hsl(0, 78%, 62%);
+$supervisor-color:hsl(180, 62%, 55%);
+$karma-color:hsl(34, 97%, 64%);
+$calculator-color:hsl(212, 86%, 64%);
+
+@font-face{
+    font-family: poppins-medium;
+    src:url('../Poppins-Medium.ttf');
+}
+
+@font-face{
+    font-family: poppins-light;
+    src:url('../Poppins-Light.ttf');
+}
+
+@font-face{
+    font-family: poppins-thin;
+    src:url('../Poppins-thin.ttf');
+}
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fafafa;
+}
+
+.block-1{
+    text-align: center;
+    display: grid;
+    gap: 0.2em;
+    margin-top: 4em;
+    
+    h1{
+        font-size: 2em;
+        font-family: poppins-thin;
+        color: hsl(248, 4%, 38%);
+    }
+
+    h2{
+        font-size: 2rem;
+        font-family: poppins-medium;
+        font-weight: 600;
+        color:hsl(240, 11%, 34%);
+    }
+
+    p{
+        font-size: 1rem;
+        font-family: poppins-light;
+        color: hsl(255, 3%, 73%);
+    }
+}
+
+main{
+    display: grid;
+    place-items: center;
+}
+
+.block-grid{
+
+    display:grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    gap:1.25em;
+    margin-top: 4em;
+    
+
+    .block-2{
+        @include card-style-mobile($supervisor-color);
+    }
+    .block-3{
+        @include card-style-mobile($teambuilder-color);
+    }
+    .block-4{
+        @include card-style-mobile($karma-color);
+    }
+    .block-5{
+        @include card-style-mobile($calculator-color);
+    }
+
+    @media(min-width:650px){
+
+        display: grid;
+        place-items: center;
+        grid-template-columns: 300px 300px;
+        
+        grid-template-areas: 
+        'teambuilder calculator'
+        'teambuilder calculator'
+        'karma supervisor'
+        'karma supervisor';
+
+        .block-2{
+            @include card-style-desktop(teambuilder);
+        }
+        .block-3{
+            @include card-style-desktop(supervisor);
+        }
+        .block-4{
+            @include card-style-desktop(calculator);
+        }
+        .block-5{
+            @include card-style-desktop(karma);
+        }
+                
+    }
+
+    @media(min-width:950px){
+
+        display: grid;
+        place-items: center;
+        grid-template-columns: 300px 300px 300px;
+        
+        grid-template-areas: 
+        '. teambuilder .'
+        'supervisor teambuilder calculator'
+        'supervisor karma calculator'
+        '. karma .';
+
+        .block-2{
+            @include card-style-desktop(teambuilder);
+        }
+        .block-3{
+            @include card-style-desktop(supervisor);
+        }
+        .block-4{
+            @include card-style-desktop(calculator);
+        }
+        .block-5{
+            @include card-style-desktop(karma);
+        }
+                
+    }
+}
+
